@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+ jenkins:
+   image: jenkins/jenkins:lts
+   ports:
+   - 80:8080
+   container_name: jenkinsbydockercompose
+     - jenkins-data:/var/jenkins_home
+   networks:
+     - jenkins
+volumes:
+  jenkins-data:
+networks:
+  jenkins:
+    driver: bridge
