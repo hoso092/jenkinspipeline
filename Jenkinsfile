@@ -1,20 +1,27 @@
-node{
-    git branch: 'main' , url:'git@github.com:hoso092/jenkinspipeline.git'
-    stage('build'){
-        try{
-        sh 'echo "Building the project..."'
+pipeline{
+    agent any 
+    stages{
+        stage ('build'){
+            steps{
+                script{
+                    echo 'Building...'
+                    
+                }
+            }
         }
-        catch (Exception e) {
-           sh 'echo "Build failed: ${e.message}"'
-            throw e
+        stage ('test'){
+            steps{
+                script{
+                    echo 'Testing...'
+                    
+                }
+            }
         }
-    }
-    stage ('test'){
-        if (env.BRANCH_NAME == "feat"){
-            sh 'echo "test stage"'
+        stage ('deploy'){
+            steps{
+                script{
+                    echo 'Deploying...'
+                    
+                }
+            }
         }
-        else{
-            sh 'echo "test stage not executed"'
-        }
-    }
-}
