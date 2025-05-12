@@ -1,5 +1,5 @@
 node{
-    git branch: 'main' , url:'https://github.com/DinaGamalMahmoud/simple-java-project.git'
+    git branch: 'main' , url:'git@github.com:hoso092/jenkinspipeline.git'
     stage('build'){
         try{
         sh 'echo "Building the project..."'
